@@ -1,10 +1,3 @@
-C:\Net_Core_API\DEMOGit\MvcMovie\obj\Debug\net7.0\MvcMovie.GeneratedMSBuildEditorConfig.editorconfig
-C:\Net_Core_API\DEMOGit\MvcMovie\obj\Debug\net7.0\MvcMovie.AssemblyInfoInputs.cache
-C:\Net_Core_API\DEMOGit\MvcMovie\obj\Debug\net7.0\MvcMovie.AssemblyInfo.cs
-C:\Net_Core_API\DEMOGit\MvcMovie\obj\Debug\net7.0\MvcMovie.csproj.CoreCompileInputs.cache
-C:\Net_Core_API\DEMOGit\MvcMovie\obj\Debug\net7.0\MvcMovie.MvcApplicationPartsAssemblyInfo.cache
-C:\Net_Core_API\DEMOGit\MvcMovie\obj\Debug\net7.0\MvcMovie.RazorAssemblyInfo.cache
-C:\Net_Core_API\DEMOGit\MvcMovie\obj\Debug\net7.0\MvcMovie.RazorAssemblyInfo.cs
 C:\Net_Core_API\DEMOGit\MvcMovie\bin\Debug\net7.0\appsettings.Development.json
 C:\Net_Core_API\DEMOGit\MvcMovie\bin\Debug\net7.0\appsettings.json
 C:\Net_Core_API\DEMOGit\MvcMovie\bin\Debug\net7.0\MvcMovie.staticwebassets.runtime.json
@@ -13,6 +6,13 @@ C:\Net_Core_API\DEMOGit\MvcMovie\bin\Debug\net7.0\MvcMovie.deps.json
 C:\Net_Core_API\DEMOGit\MvcMovie\bin\Debug\net7.0\MvcMovie.runtimeconfig.json
 C:\Net_Core_API\DEMOGit\MvcMovie\bin\Debug\net7.0\MvcMovie.dll
 C:\Net_Core_API\DEMOGit\MvcMovie\bin\Debug\net7.0\MvcMovie.pdb
+C:\Net_Core_API\DEMOGit\MvcMovie\obj\Debug\net7.0\MvcMovie.GeneratedMSBuildEditorConfig.editorconfig
+C:\Net_Core_API\DEMOGit\MvcMovie\obj\Debug\net7.0\MvcMovie.AssemblyInfoInputs.cache
+C:\Net_Core_API\DEMOGit\MvcMovie\obj\Debug\net7.0\MvcMovie.AssemblyInfo.cs
+C:\Net_Core_API\DEMOGit\MvcMovie\obj\Debug\net7.0\MvcMovie.csproj.CoreCompileInputs.cache
+C:\Net_Core_API\DEMOGit\MvcMovie\obj\Debug\net7.0\MvcMovie.MvcApplicationPartsAssemblyInfo.cache
+C:\Net_Core_API\DEMOGit\MvcMovie\obj\Debug\net7.0\MvcMovie.RazorAssemblyInfo.cache
+C:\Net_Core_API\DEMOGit\MvcMovie\obj\Debug\net7.0\MvcMovie.RazorAssemblyInfo.cs
 C:\Net_Core_API\DEMOGit\MvcMovie\obj\Debug\net7.0\staticwebassets\msbuild.MvcMovie.Microsoft.AspNetCore.StaticWebAssets.props
 C:\Net_Core_API\DEMOGit\MvcMovie\obj\Debug\net7.0\staticwebassets\msbuild.build.MvcMovie.props
 C:\Net_Core_API\DEMOGit\MvcMovie\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.MvcMovie.props
@@ -28,3 +28,7 @@ C:\Net_Core_API\DEMOGit\MvcMovie\obj\Debug\net7.0\refint\MvcMovie.dll
 C:\Net_Core_API\DEMOGit\MvcMovie\obj\Debug\net7.0\MvcMovie.pdb
 C:\Net_Core_API\DEMOGit\MvcMovie\obj\Debug\net7.0\MvcMovie.genruntimeconfig.cache
 C:\Net_Core_API\DEMOGit\MvcMovie\obj\Debug\net7.0\ref\MvcMovie.dll
+C:\Net_Core_API\DEMOGit\MvcMovie\bin\Debug\net7.0\MvcMovie.staticwebassets.endpoints.json
+C:\Net_Core_API\DEMOGit\MvcMovie\obj\Debug\net7.0\MvcMovie.sourcelink.json
+C:\Net_Core_API\DEMOGit\MvcMovie\obj\Debug\net7.0\staticwebassets.build.endpoints.json
+C:\Net_Core_API\DEMOGit\MvcMovie\obj\Debug\net7.0\staticwebassets\msbuild.MvcMovie.Microsoft.AspNetCore.StaticWebAssetEndpoints.props

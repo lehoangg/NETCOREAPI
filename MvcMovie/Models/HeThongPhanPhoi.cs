@@ -2,7 +2,7 @@ namespace MvcMovie.Models
 {
     public class HeThongPhanPhoi
     {
-        public string MaHTPP { get; set; }
-        public string TenHTPP { get; set; }
+        public required string MaHTPP { get; set; }
+        public required string TenHTPP { get; set; }
     }
 }

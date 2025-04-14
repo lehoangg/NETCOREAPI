@@ -1,4 +1,4 @@
-@model IEnumerable<MvcMovie.Models.Person>
+@*@model IEnumerable<MvcMovie.Models.Person>
 @using X.PagedList;
 @using X.PagedList.Mvc.Core;
 
@@ -41,4 +41,23 @@
 
 @Html.PagedListPager((IPagedList) Model, page => Url.Action("Index", new {page = page}),
     new X.PagedList.Mvc.Core.PagedListRenderOptions { LiElementClasses = new string[] {"page-item"}, 
-    PageClasses = new string[] { "page-link" }})
+    PageClasses = new string[] { "page-link" }})*@
+@model X.PagedList.IPagedList<MvcMovie.Models.Person>
+@using X.PagedList.Mvc.Core;
+
+<table class="table">
+    <tr>
+        <th>Tên</th>
+        <th>Email</th>
+    </tr>
+    @foreach (var user in Model)
+    {
+        <tr>
+            <td>@user.FullName</td>
+            <td>@user.Address</td>
+        </tr>
+    }
+</table>
+
+<!-- Hiển thị phân trang -->
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))

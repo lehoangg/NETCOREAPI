@@ -376,3 +376,5 @@ C:\Net_Core_API\DEMOGit\MvcMovie\bin\Debug\net9.0\System.Security.Cryptography.P
 C:\Net_Core_API\DEMOGit\MvcMovie\bin\Debug\net9.0\runtimes\win\lib\net9.0\Microsoft.Win32.SystemEvents.dll
 C:\Net_Core_API\DEMOGit\MvcMovie\bin\Debug\net9.0\runtimes\win\lib\net9.0\System.Security.Cryptography.Pkcs.dll
 C:\Net_Core_API\DEMOGit\MvcMovie\obj\Debug\net9.0\MvcMovie.MvcApplicationPartsAssemblyInfo.cs
+C:\Net_Core_API\DEMOGit\MvcMovie\bin\Debug\net9.0\X.PagedList.dll
+C:\Net_Core_API\DEMOGit\MvcMovie\bin\Debug\net9.0\X.PagedList.Mvc.Core.dll

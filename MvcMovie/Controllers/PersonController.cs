@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using MvcMovie.Models.Process;
 using OfficeOpenXml;
-using X.PagedList;
+using X.PagedList.Extensions;
 namespace MvcMovie.Controllers
 {
     public class PersonController : Controller
@@ -18,11 +18,15 @@ namespace MvcMovie.Controllers
       {
         _context=context;
       }
-      public async Task<IActionResult> Index(int? page)
-      {
-        var model = _context.Person.ToList().ToPagedList(page ?? 1, 5);
-        return View(model);
-      }
+       public ActionResult Index(int? page)
+        {
+            int pageSize = 3; // số mục mỗi trang
+            int pageNumber = page ?? 1; // trang hiện tại
+
+            var users = _context.Person.OrderBy(u => u.PersonId); // truy vấn danh sách
+
+            return View(users.ToPagedList(pageNumber, pageSize));
+        }
       public IActionResult Download()
       {
         //Name the file when downloading
@@ -44,11 +48,7 @@ namespace MvcMovie.Controllers
         }
       }
 
-      public async Task<IActionResult> Index()
-        {
-          var model = await _context.Person.ToListAsync();
-          return View(model);
-        }
+     
       
       public IActionResult Create()
       {

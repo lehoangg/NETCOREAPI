@@ -9397,6 +9397,7 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 9.0.2",
       "Microsoft.EntityFrameworkCore.Tools >= 9.0.2",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 9.0.0",
+      "X.PagedList >= 10.5.7",
       "X.PagedList.Mvc.Core >= 10.5.7"
     ]
   },
@@ -9478,6 +9479,10 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[9.0.0, )"
+          },
+          "X.PagedList": {
+            "target": "Package",
+            "version": "[10.5.7, )"
           },
           "X.PagedList.Mvc.Core": {
             "target": "Package",

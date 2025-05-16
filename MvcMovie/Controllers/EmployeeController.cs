@@ -6,10 +6,12 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MvcMovie.Data;
-using MvcMovie.Models;
-
+using MvcMovie.Models.Entities;
+using Microsoft.AspNetCore.Authorization;
 namespace MvcMovie.Controllers
 {
+    
+    [Authorize]
     public class EmployeeController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -18,15 +20,17 @@ namespace MvcMovie.Controllers
         {
             _context = context;
         }
+        [AllowAnonymous]
 
         // GET: Employee
         public async Task<IActionResult> Index()
         {
             return View(await _context.Employee.ToListAsync());
         }
+        [Authorize (Roles ="Employee")]
 
         // GET: Employee/Details/5
-        public async Task<IActionResult> Details(string id)
+        public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
             {
@@ -34,7 +38,7 @@ namespace MvcMovie.Controllers
             }
 
             var employee = await _context.Employee
-                .FirstOrDefaultAsync(m => m.PersonId == id);
+                .FirstOrDefaultAsync(m => m.EmployeeId == id);
             if (employee == null)
             {
                 return NotFound();
@@ -42,6 +46,7 @@ namespace MvcMovie.Controllers
 
             return View(employee);
         }
+        [Authorize (Roles = "Admin")]
 
         // GET: Employee/Create
         public IActionResult Create()
@@ -54,7 +59,7 @@ namespace MvcMovie.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("EmployeeId,Age,PersonId,FullName,Address")] Employee employee)
+        public async Task<IActionResult> Create([Bind("EmployeeId,FirstName,LastName,Address,DateOfBirth,Position,Email,HireDate")] Employee employee)
         {
             if (ModelState.IsValid)
             {
@@ -64,9 +69,10 @@ namespace MvcMovie.Controllers
             }
             return View(employee);
         }
+        [Authorize (Roles = "Admin")]
 
         // GET: Employee/Edit/5
-        public async Task<IActionResult> Edit(string id)
+        public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
             {
@@ -86,9 +92,9 @@ namespace MvcMovie.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("EmployeeId,Age,PersonId,FullName,Address")] Employee employee)
+        public async Task<IActionResult> Edit(int id, [Bind("EmployeeId,FirstName,LastName,Address,DateOfBirth,Position,Email,HireDate")] Employee employee)
         {
-            if (id != employee.PersonId)
+            if (id != employee.EmployeeId)
             {
                 return NotFound();
             }
@@ -102,7 +108,7 @@ namespace MvcMovie.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!EmployeeExists(employee.PersonId))
+                    if (!EmployeeExists(employee.EmployeeId))
                     {
                         return NotFound();
                     }
@@ -117,7 +123,7 @@ namespace MvcMovie.Controllers
         }
 
         // GET: Employee/Delete/5
-        public async Task<IActionResult> Delete(string id)
+        public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
             {
@@ -125,7 +131,7 @@ namespace MvcMovie.Controllers
             }
 
             var employee = await _context.Employee
-                .FirstOrDefaultAsync(m => m.PersonId == id);
+                .FirstOrDefaultAsync(m => m.EmployeeId == id);
             if (employee == null)
             {
                 return NotFound();
@@ -137,7 +143,7 @@ namespace MvcMovie.Controllers
         // POST: Employee/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(string id)
+        public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var employee = await _context.Employee.FindAsync(id);
             if (employee != null)
@@ -149,9 +155,9 @@ namespace MvcMovie.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool EmployeeExists(string id)
+        private bool EmployeeExists(int id)
         {
-            return _context.Employee.Any(e => e.PersonId == id);
+            return _context.Employee.Any(e => e.EmployeeId == id);
         }
     }
 }

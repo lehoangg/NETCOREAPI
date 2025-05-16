@@ -44,9 +44,25 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "Bogus": {
+              "target": "Package",
+              "version": "[35.6.3, )"
+            },
             "EPPlus": {
               "target": "Package",
               "version": "[7.7.0, )"
+            },
+            "MailKit": {
+              "target": "Package",
+              "version": "[4.11.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[9.0.4, )"
             },
             "Microsoft.AspNetCore.Mvc.Core": {
               "target": "Package",
@@ -54,13 +70,13 @@
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[9.0.2, )"
+              "version": "[9.0.4, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[9.0.2, )"
+              "version": "[9.0.4, )"
             },
             "Microsoft.EntityFrameworkCore.SQLite": {
               "target": "Package",
@@ -108,7 +124,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

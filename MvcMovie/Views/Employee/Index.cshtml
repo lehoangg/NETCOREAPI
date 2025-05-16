@@ -1,4 +1,4 @@
-@model IEnumerable<MvcMovie.Models.Employee>
+@model IEnumerable<MvcMovie.Models.Entities.Employee>
 
 @{
     ViewData["Title"] = "Index";
@@ -13,16 +13,25 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.EmployeeId)
+                @Html.DisplayNameFor(model => model.FirstName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Age)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FullName)
+                @Html.DisplayNameFor(model => model.LastName)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfBirth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Position)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HireDate)
             </th>
             <th></th>
         </tr>
@@ -31,21 +40,30 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.EmployeeId)
+                @Html.DisplayFor(modelItem => item.FirstName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Age)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FullName)
+                @Html.DisplayFor(modelItem => item.LastName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Address)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.PersonId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.PersonId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.PersonId">Delete</a>
+                @Html.DisplayFor(modelItem => item.DateOfBirth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Position)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HireDate)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.EmployeeId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.EmployeeId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.EmployeeId">Delete</a>
             </td>
         </tr>
 }

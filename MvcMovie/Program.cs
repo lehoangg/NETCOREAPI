@@ -67,11 +67,11 @@ builder.Services.AddAuthorization(options =>
         options.AddPolicy(permission.ToString(), policy =>
             policy.RequireClaim("Permission", permission.ToString()));
     }
-        options.AddPolicy("Role", policy => policy.RequireClaim("Role", "AdminOnly"));      
-        options.AddPolicy("Permission", policy => policy.RequireClaim("Role", "EmployeeOnly"));
-        options.AddPolicy("PolicyAdmin", policy => policy.RequireRole("Admin"));
-        options.AddPolicy("PolicyEmployee", policy => policy.RequireRole("Employee"));
-        options.AddPolicy("PolicyByPhoneNumber", policy => policy.Requirements.Add(new PolicyByPhoneNumberRequirement()));
+        //options.AddPolicy("Role", policy => policy.RequireClaim("Role", "AdminOnly"));      
+        //options.AddPolicy("Permission", policy => policy.RequireClaim("Role", "EmployeeOnly"));
+        //options.AddPolicy("PolicyAdmin", policy => policy.RequireRole("Admin"));
+        //options.AddPolicy("PolicyEmployee", policy => policy.RequireRole("Employee"));
+        //options.AddPolicy("PolicyByPhoneNumber", policy => policy.Requirements.Add(new PolicyByPhoneNumberRequirement()));
 });
 builder.Services.AddSingleton<IAuthorizationHandler, PolicyByPhoneNumberHandler>();
 builder.Services.AddTransient<EmployeeSeeder>();
@@ -101,6 +101,7 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseRouting();
 
+app.UseAuthentication();  // Bắt buộc có nếu dùng Identity
 app.UseAuthorization();
 
 app.MapStaticAssets();

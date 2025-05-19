@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Authorization;
 using MvcMovie.Models.Process;
 namespace MvcMovie.Controllers
 {
-    [Authorize(Policy = "PolicyByPhoneNumber")]
+     [Authorize(Policy = "PolicyByPhoneNumber")]
     public class AccountController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;

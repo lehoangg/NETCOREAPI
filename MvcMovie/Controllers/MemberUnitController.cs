@@ -8,10 +8,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MvcMovie.Data;
 using MvcMovie.Models.Entities;
+using MvcMovie.Models.Process;
 
 namespace MvcMovie.Controllers
 {
-    [Authorize(Policy = "PolicyEmployee")]
+    // [Authorize(Policy = "PolicyEmployee")]
     public class MemberUnitController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -22,6 +23,7 @@ namespace MvcMovie.Controllers
         }
 
         // GET: MemberUnit
+
         public async Task<IActionResult> Index()
         {
             return View(await _context.MemberUnit.ToListAsync());
@@ -46,7 +48,7 @@ namespace MvcMovie.Controllers
         }
 
         // GET: MemberUnit/Create
-        [Authorize(Policy = "PolicyAdmin")]
+        [Authorize(Policy = nameof(SystemPermissions.MemberUnitCreate))]
         public IActionResult Create()
         {
             return View();
